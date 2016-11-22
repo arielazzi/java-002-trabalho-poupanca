@@ -60,7 +60,14 @@ public class PoupancaSaude extends Poupanca
 		return resp;
 	}
 
-	// public buscaDependente
+	public int buscaDependente(String nomeDependente)
+	{
+		int indice = 99;
+		for (int i = 0; i < contaDependentes(); i++)
+			if(dependentes[i].getNome() == nomeDependente)
+				indice = i;
+		return indice;
+	}
 
 	// public retiraDependente
 
