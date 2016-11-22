@@ -37,7 +37,15 @@ public class PoupancaSaude extends Poupanca
 
 	}
 
-	// public creditaRendimento
+	public double creditaRendimento(double taxa)
+	{
+		double rendimentoSaldoLivre = super.creditaRendimento(taxa);
+
+		double rendimentoSaldoVinculado = taxa * this.saldoVinculado;
+		this.saldoVinculado += rendimentoSaldoVinculado;
+
+		return rendimentoSaldoLivre + rendimentoSaldoVinculado;
+	}
 
 	public boolean insereDependente(Dependente dep)
 	{
