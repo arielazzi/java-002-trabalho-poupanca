@@ -150,8 +150,32 @@ public class PoupancaSaude extends Poupanca
 
     }
 
-    // private ordenaDependentes
+    public void ordenaDependentes()
+    {
+    	Dependente aux = null;
+        for(int i=0; i < dependentes.length; i++)
+            for(int j=i+1; j < dependentes.length; j++)
+            	if (dependentes[i]  != null && dependentes[j] != null) {
+	                if(dependentes[j].getNome().compareToIgnoreCase(dependentes[i].getNome()) < 0)
+	                {
+	                    aux = dependentes[j];
+	                    dependentes[j] = dependentes[i];
+	                    dependentes[i] = aux;
+	                }
+            	}
+    }
 
-    // public toString
+    public String toString()
+    {
+    	String infoConta = super.toString() + "\nSaldo Vinculado: R$ " + this.saldoVinculado +"\nSaldo Financiado: R$ " + this.saldoFinanciado;
+    	ordenaDependentes();
+    	String infoDep   =  "";
+    	for (int i=0; i < dependentes.length; i++) {
+    		if (dependentes[i] != null) {
+    			infoDep += "\n" + dependentes[i].toString();
+    		}
+    	}
+    	return infoConta + " " + infoDep;
+    }
 
 }
