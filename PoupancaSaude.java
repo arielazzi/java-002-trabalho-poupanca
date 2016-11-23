@@ -84,7 +84,7 @@ public class PoupancaSaude extends Poupanca
 
     }
 
-    public Double retiraSaude(double valorDespesaSaude)
+    public double retiraSaude(double valorDespesaSaude)
     {
         if (valorDespesaSaude <= saldoVinculado)
         {
@@ -136,7 +136,19 @@ public class PoupancaSaude extends Poupanca
             return 0.00;
     }
 
-    // public amortizaFinanciamento(Double valorArmonizador)
+    public double amortizaFinanciamento(double valorArmonizador)
+    {
+    	if (valorArmonizador > saldoFinanciado) return 0;
+    	else{
+    		saldoFinanciado -= valorArmonizador;
+    		if (saldoFinanciado == 0) {
+    			super.deposita(valorArmonizador * 0.05);
+    			return valorArmonizador * 0.05;
+    		}
+    	}
+    	return 0;
+
+    }
 
     // private ordenaDependentes
 
