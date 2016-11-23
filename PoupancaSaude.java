@@ -84,7 +84,62 @@ public class PoupancaSaude extends Poupanca
 
 	}
 
-	// public retiraSaude
+	public String retiraSaude(double valorDespesaSaude)
+	{
+		if (valorDespesaSaude <= saldoVinculado)
+		{
+			saldoVinculado -= valorDespesaSaude;	
+		}
+		else
+		{
+			Teclado t = new Teclado();
+			int op;
+			do{
+				double valorRestanteDespesa = valorDespesaSaude - saldoVinculado;
+
+	            System.out.println("------------------------------");
+	            System.out.println("SALDO VINCULODO INSUFICIENTE!");
+	            System.out.println("------------------------------");
+	            System.out.println("Valor Restante da despesa : R$ " + valorRestanteDespesa);
+	            System.out.println("Saldo Livre Disponivel : " + super.getSaldoLivre());
+	            System.out.println("------------------------------");
+	            System.out.println("1 – Utilizar Saldo Livre");
+	            System.out.println("2 – Financiamento");
+	            System.out.println("3 – Ambas");
+	            System.out.println("4 – Sair");
+	            System.out.println("------------------------------");
+	            
+	            do{
+	                op = t.leInt("Selecione a opção do menu: ");
+	                if(op<1 || op>7)
+	                    System.out.println("Opção invalida, Digite novamente!");
+	            }while(op<1 || op>7);
+
+	            if(op == 1)
+	            {
+	                t.leint("Informe a quantidade de saldo livre você deseja utilizar!");
+	             	do{
+		                int valorRequerido = t.leint("Informe a quantidade de saldo livre você deseja utilizar!");
+		                if(valorRequerido > super.getSaldoLivre())
+		                    System.out.println("Valor muito grande, redigíte!");
+		            }while(valorRequerido > super.getSaldoLivre());   
+	            }
+	            // else if(op == 2)
+	            // {
+	            //     seq.geraExibePares();
+	            // }
+	            // else if(op == 3)
+	            // {
+	            //     seq.geraExibeMultiplos();
+	            // }
+	            
+	            if(op != 4)
+	                t.leInt("Tecle Enter para exibir o menu novamente");
+
+	        }while(op != 4);
+		}
+		return "teste";
+	}
 
 	// public amortizaFinanciamento
 
