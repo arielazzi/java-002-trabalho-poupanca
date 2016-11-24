@@ -47,4 +47,13 @@ public class Agencia
             return poupancas[indice].getNumero();
         }
     }
+
+    public int buscarConta(int numConta)
+    {
+        int aux = -1; 
+        for (int i=0;i < poupancas.length; i++)
+            if (poupancas[i].getNumero() == numConta)
+                aux = i;
+        return aux;
+    }
 }
