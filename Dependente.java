@@ -37,4 +37,7 @@ public class Dependente
 	{
 		return "Nome: " + nome + " Parentesco: " + traduzParentesco();
 	}
+
+	public String getNome(){return this.nome;}
+	public char getParentesco(){return this.parentesco;}
 }
