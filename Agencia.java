@@ -97,16 +97,16 @@ public class Agencia
                 else
                     poupancas[indice].deposita(t.leDouble("Informe o valor do deposito"));
             }
-            // else if(op == 3)
-            // {
-            //     int indice = buscarConta(t.leInt("Informe o numero da conta:"));
-            //     if (indice == -1)
-            //         System.out.println("Conta Inexistente");
-            //     else{
-            //         boolean ret = poupancas[indice].retira(t.leDouble("Informe o valor da retirada"));
-            //         if (!ret)
-            //             System.out.println("Saldo Insuficiente");
-            //     }
+            else if(op == 3)
+            {
+                int indice = buscarConta(t.leInt("Informe o numero da conta:"));
+                if (indice == -1)
+                    System.out.println("Conta Inexistente");
+                else{
+                    boolean ret = poupancas[indice].retira(t.leDouble("Informe o valor da retirada"));
+                    if (!ret)
+                        System.out.println("Saldo Insuficiente");
+                }
 
             // }
             // else if(op == 4)
