@@ -89,14 +89,14 @@ public class Agencia
                 else
                     System.out.println("Conta aberta de numero: " + result);
             }
-            // else if(op == 2)
-            // {
-            //     int indice = buscarConta(t.leInt("Informe o numero da conta:"));
-            //     if (indice == -1)
-            //         System.out.println("Conta Inexistente");
-            //     else
-            //         poupancas[indice].deposita(t.leDouble("Informe o valor do deposito"));
-            // }
+            else if(op == 2)
+            {
+                int indice = buscarConta(t.leInt("Informe o numero da conta:"));
+                if (indice == -1)
+                    System.out.println("Conta Inexistente");
+                else
+                    poupancas[indice].deposita(t.leDouble("Informe o valor do deposito"));
+            }
             // else if(op == 3)
             // {
             //     int indice = buscarConta(t.leInt("Informe o numero da conta:"));
