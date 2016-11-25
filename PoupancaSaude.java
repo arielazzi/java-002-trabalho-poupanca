@@ -150,7 +150,7 @@ public class PoupancaSaude extends Poupanca
 
     }
 
-    public void ordenaDependentes()
+    private void ordenaDependentes()
     {
     	Dependente aux = null;
         for(int i=0; i < dependentes.length; i++)
